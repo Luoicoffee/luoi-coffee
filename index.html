@@ -1,0 +1,950 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lười CoFFe - Lười một chút, chill một đời</title>
+
+<style>
+/* ===== GIAO DIỆN CHUNG ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fffaf3;
+    color: #39271e;
+    line-height: 1.6;
+}
+
+.container {
+    width: 92%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+section {
+    padding: 65px 0;
+}
+
+h2 {
+    text-align: center;
+    color: #9d2932;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.btn, button {
+    display: inline-block;
+    background: #a82932;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 7px;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn:hover, button:hover {
+    background: #782027;
+}
+
+/* ===== 1. THANH ĐIỀU HƯỚNG ===== */
+header {
+    background: #a82932;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 3px 10px #0002;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 16px 0;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    color: #fff0d6;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+nav a {
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #ffdb99;
+}
+
+/* ===== 2. TRANG CHỦ ===== */
+.banner {
+    min-height: 450px;
+    display: flex;
+    align-items: center;
+    color: white;
+    background:
+        linear-gradient(90deg, #352013dd, #35201333),
+        url("https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=1400")
+        center / cover no-repeat;
+}
+
+.banner-content {
+    max-width: 650px;
+}
+
+.banner h1 {
+    font-size: clamp(34px, 5vw, 55px);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.banner p {
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+/* ===== 3. ƯU ĐÃI THÀNH VIÊN ===== */
+.member {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 35px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.member-left {
+    background: #e52b39;
+    color: white;
+    padding: 45px 35px;
+}
+
+.member-left h2 {
+    color: white;
+    text-align: left;
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+.member-right {
+    background: #f6e8d5;
+    padding: 45px 35px;
+    text-align: center;
+}
+
+.member-right h2 {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.member-right .btn {
+    margin-top: 20px;
+}
+
+/* ===== 4. TIỂU SỬ QUÁN ===== */
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.about-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 15px #0001;
+    padding-bottom: 25px;
+}
+
+.about-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.about-card h3 {
+    color: #a82932;
+    margin: 15px;
+}
+
+.about-card p {
+    padding: 0 18px;
+}
+
+/* ===== 5. THỰC ĐƠN ===== */
+.menu-section {
+    background: #f5eadb;
+}
+
+.menu-intro {
+    text-align: center;
+    margin-bottom: 35px;
+    color: #765b4a;
+    font-size: 17px;
+}
+
+.category-title {
+    font-size: 25px;
+    color: #922c32;
+    margin: 35px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #dfc6ab;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.product {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 22px;
+    box-shadow: 0 4px 12px #0001;
+    transition: transform 0.2s;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+}
+
+.product img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+}
+
+.product h3 {
+    margin: 15px 8px 5px;
+    font-size: 19px;
+}
+
+.product p {
+    color: #786457;
+    font-size: 14px;
+    padding: 0 10px;
+    min-height: 45px;
+}
+
+.price {
+    display: block;
+    color: #a82932;
+    font-size: 21px;
+    font-weight: bold;
+    margin: 12px 0;
+}
+
+.product button {
+    margin: 5px 10px;
+}
+
+/* ===== 6. GIỎ HÀNG ===== */
+.order-box {
+    max-width: 650px;
+    margin: auto;
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 18px #0001;
+}
+
+.order-box h3 {
+    margin-bottom: 15px;
+}
+
+.cart-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cart-controls button {
+    padding: 5px 10px;
+}
+
+.remove-btn {
+    background: #777;
+}
+
+.total {
+    text-align: right;
+    font-size: 22px;
+    color: #a82932;
+    margin: 25px 0;
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin: 15px 0 6px;
+}
+
+form input,
+form textarea {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d2c4b5;
+    border-radius: 6px;
+    font: inherit;
+}
+
+form button {
+    width: 100%;
+    margin-top: 25px;
+}
+
+/* ===== 7. HỖ TRỢ ===== */
+.support {
+    background: #f5eadb;
+    text-align: center;
+}
+
+.support p {
+    margin: 12px 0;
+}
+
+/* ===== 8. ĐỊA CHỈ ===== */
+.address {
+    text-align: center;
+}
+
+.address-card {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    border: 2px solid #e7d4bf;
+    padding: 35px;
+    border-radius: 12px;
+}
+
+.address-card h3 {
+    color: #a82932;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.address-card p {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+/* ===== 9. CHÂN TRANG ===== */
+footer {
+    background: #922c32;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+/* ===== GIAO DIỆN ĐIỆN THOẠI ===== */
+@media (max-width: 900px) {
+    .navbar {
+        justify-content: center;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .member,
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .product img {
+        height: 145px;
+    }
+
+    .product h3 {
+        font-size: 16px;
+    }
+
+    .product button {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .banner {
+        min-height: 360px;
+    }
+
+    .banner p {
+        font-size: 16px;
+    }
+
+    .cart-row {
+        flex-wrap: wrap;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== THANH ĐIỀU HƯỚNG ===== -->
+<header>
+    <div class="container navbar">
+        <a href="#trangchu" class="logo">
+            ☕ Lười CoFFe
+        </a>
+
+        <nav>
+            <a href="#trangchu">TRANG CHỦ</a>
+            <a href="#thucdon">THỰC ĐƠN</a>
+            <a href="#tieusu">TIỂU SỬ QUÁN</a>
+            <a href="#hotro">HỖ TRỢ</a>
+            <a href="#dathang">ĐẶT HÀNG</a>
+            <a href="#diachi">ĐỊA CHỈ</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+<!-- ===== TRANG CHỦ ===== -->
+<section id="trangchu" class="banner">
+    <div class="container">
+        <div class="banner-content">
+            <h1>
+                Lười một chút,<br>
+                chill một đời!
+            </h1>
+
+            <p>
+                Thưởng thức hương vị cà phê
+                đậm đà cùng Lười CoFFe.
+            </p>
+
+            <a href="#thucdon" class="btn">
+                KHÁM PHÁ THỰC ĐƠN
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ƯU ĐÃI THÀNH VIÊN ===== -->
+<div class="container">
+    <div class="member">
+        <div class="member-left">
+            <h2>LƯỜI CLUB</h2>
+            <h3>Chào bạn mới!</h3>
+            <p>
+                Những ưu đãi hấp dẫn
+                dành riêng cho khách hàng.
+            </p>
+        </div>
+
+        <div class="member-right">
+            <h2>Thành viên Lười CoFFe</h2>
+            <p>
+                Cùng thưởng thức những ly cà phê
+                thơm ngon mỗi ngày.
+            </p>
+            <a href="#hotro" class="btn">
+                TÌM HIỂU NGAY
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- ===== TIỂU SỬ QUÁN ===== -->
+<section id="tieusu">
+    <div class="container">
+        <h2>Đồng hành cùng Lười CoFFe</h2>
+
+        <div class="about-grid">
+            <article class="about-card">
+                <img
+                    src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=600"
+                    alt="Không gian quán cà phê"
+                    loading="lazy">
+
+                <h3>KHÔNG GIAN THƯ GIÃN</h3>
+                <p>
+                    Một góc nhỏ để bạn học tập,
+                    làm việc và gặp gỡ bạn bè.
+                </p>
+            </article>
+
+            <article class="about-card">
+                <img
+                    src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600"
+                    alt="Pha chế cà phê"
+                    loading="lazy">
+
+                <h3>CÂU CHUYỆN NHÀ LƯỜI</h3>
+                <p>
+                    Lười CoFFe mong muốn mang đến
+                    những khoảnh khắc bình yên
+                    qua từng ly cà phê.
+                </p>
+            </article>
+
+            <article class="about-card">
+                <img
+                    src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=600"
+                    alt="Hạt cà phê"
+                    loading="lazy">
+
+                <h3>CHẤT LƯỢNG CÀ PHÊ</h3>
+                <p>
+                    Chúng tôi chú trọng hương vị,
+                    chất lượng và trải nghiệm
+                    của khách hàng.
+                </p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- ===== THỰC ĐƠN ===== -->
+<section id="thucdon" class="menu-section">
+    <div class="container">
+        <h2>☕ Thực đơn nhà Lười</h2>
+
+        <p class="menu-intro">
+            Một chút cà phê, một chút ngọt ngào,
+            một ngày thật chill!
+        </p>
+
+        <h3 class="category-title">☕ Cà phê</h3>
+        <div id="menu-caphe" class="menu-grid"></div>
+
+        <h3 class="category-title">
+            🍵 Matcha, ca cao và trà
+        </h3>
+        <div id="menu-tra" class="menu-grid"></div>
+    </div>
+</section>
+
+<!-- ===== ĐẶT HÀNG ===== -->
+<section id="dathang">
+    <div class="container">
+        <h2>🛒 Đặt hàng tại Lười CoFFe</h2>
+
+        <div class="order-box">
+            <h3>Giỏ hàng của bạn</h3>
+
+            <div id="giohang">
+                Chưa có sản phẩm nào.
+            </div>
+
+            <h3 class="total">
+                Tổng tiền:
+                <span id="tongtien">0đ</span>
+            </h3>
+
+            <form id="orderForm">
+                <label for="ten">Họ và tên</label>
+                <input
+                    id="ten"
+                    type="text"
+                    placeholder="Nhập họ và tên"
+                    required>
+
+                <label for="sdt">Số điện thoại</label>
+                <input
+                    id="sdt"
+                    type="tel"
+                    placeholder="Nhập số điện thoại"
+                    required>
+
+                <label for="diachigiaohang">
+                    Địa chỉ giao hàng
+                </label>
+                <textarea
+                    id="diachigiaohang"
+                    rows="3"
+                    placeholder="Nhập địa chỉ nhận hàng"
+                    required></textarea>
+
+                <label for="ghichu">Ghi chú</label>
+                <textarea
+                    id="ghichu"
+                    rows="3"
+                    placeholder="Ít đá, ít đường..."></textarea>
+
+                <button type="submit">
+                    XÁC NHẬN ĐẶT HÀNG
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- ===== HỖ TRỢ ===== -->
+<section id="hotro" class="support">
+    <div class="container">
+        <h2>☎ Hỗ trợ khách hàng</h2>
+
+        <p>
+            Cần tư vấn về thực đơn hoặc đơn hàng?
+        </p>
+
+        <p>Hotline: 0123 456 789</p>
+        <p>Email: luoicoffee@example.com</p>
+        <p>Thời gian phục vụ: 7:00 - 22:00</p>
+    </div>
+</section>
+
+<!-- ===== ĐỊA CHỈ ===== -->
+<section id="diachi" class="address">
+    <div class="container">
+        <h2>📍 Địa chỉ Lười CoFFe</h2>
+
+        <div class="address-card">
+            <h3>☕ Lười CoFFe - Cần Thơ</h3>
+
+            <p>
+                Số 100, đường 3/2 Tân An,<br>
+                Phường Tân An, Cần Thơ
+            </p>
+
+            <p>
+                Hẹn gặp bạn tại Lười CoFFe!
+            </p>
+
+            <a
+                class="btn"
+                href="https://www.google.com/maps/search/?api=1&query=100+duong+3%2F2+Tan+An+Can+Tho"
+                target="_blank"
+                rel="noopener noreferrer">
+                XEM TRÊN GOOGLE MAPS
+            </a>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- ===== CHÂN TRANG ===== -->
+<footer>
+    <h3>☕ Lười CoFFe</h3>
+    <p>Lười một chút, chill một đời!</p>
+    <p>
+        Số 100, đường 3/2 Tân An,
+        Phường Tân An, Cần Thơ
+    </p>
+    <p>© 2026 Lười CoFFe</p>
+</footer>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+
+/* DANH SÁCH 12 MÓN */
+const danhSachMon = [
+    {
+        ten: "Cà phê đen",
+        gia: 25000,
+        moTa: "Đậm đà, thơm ngon",
+        anh: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500",
+        nhom: "caphe"
+    },
+    {
+        ten: "Cà phê sữa",
+        gia: 30000,
+        moTa: "Ngọt ngào, béo ngậy",
+        anh: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500",
+        nhom: "caphe"
+    },
+    {
+        ten: "Bạc xỉu",
+        gia: 35000,
+        moTa: "Thơm béo vị sữa",
+        anh: "https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?w=500",
+        nhom: "caphe"
+    },
+    {
+        ten: "Cà phê muối",
+        gia: 39000,
+        moTa: "Cà phê cùng kem muối béo mịn",
+        anh: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500",
+        nhom: "caphe"
+    },
+    {
+        ten: "Cappuccino",
+        gia: 45000,
+        moTa: "Espresso và bọt sữa mềm mịn",
+        anh: "https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?w=500",
+        nhom: "caphe"
+    },
+    {
+        ten: "Latte",
+        gia: 45000,
+        moTa: "Cà phê sữa thơm dịu",
+        anh: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500",
+        nhom: "caphe"
+    },
+    {
+        ten: "Matcha latte",
+        gia: 45000,
+        moTa: "Matcha hòa quyện cùng sữa",
+        anh: "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=500",
+        nhom: "tra"
+    },
+    {
+        ten: "Ca cao sữa",
+        gia: 35000,
+        moTa: "Ca cao đậm vị, sữa thơm béo",
+        anh: "https://images.unsplash.com/photo-1517578239113-b03992dcdd25?w=500",
+        nhom: "tra"
+    },
+    {
+        ten: "Trà sữa trân châu",
+        gia: 39000,
+        moTa: "Trà sữa béo thơm, trân châu dai",
+        anh: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=500",
+        nhom: "tra"
+    },
+    {
+        ten: "Trà đào cam sả",
+        gia: 39000,
+        moTa: "Thanh mát, thơm hương đào",
+        anh: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=500",
+        nhom: "tra"
+    },
+    {
+        ten: "Trà vải",
+        gia: 39000,
+        moTa: "Trà trái cây thơm ngọt",
+        anh: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=500",
+        nhom: "tra"
+    },
+    {
+        ten: "Trà chanh mật ong",
+        gia: 30000,
+        moTa: "Chua ngọt, thanh mát",
+        anh: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=500",
+        nhom: "tra"
+    }
+];
+
+/* ĐỊNH DẠNG TIỀN */
+function dinhDangTien(soTien) {
+    return soTien.toLocaleString("vi-VN") + "đ";
+}
+
+/* HIỂN THỊ THỰC ĐƠN */
+function hienThiThucDon() {
+    danhSachMon.forEach(mon => {
+        const khung = document.getElementById(
+            mon.nhom === "caphe"
+                ? "menu-caphe"
+                : "menu-tra"
+        );
+
+        const card = document.createElement("article");
+        card.className = "product";
+
+        const img = document.createElement("img");
+        img.src = mon.anh;
+        img.alt = mon.ten;
+        img.loading = "lazy";
+
+        img.onerror = function() {
+            this.onerror = null;
+            this.src =
+                "https://placehold.co/500x350/f5e9d7/6a422b?text=Luoi+CoFFe";
+        };
+
+        const ten = document.createElement("h3");
+        ten.textContent = mon.ten;
+
+        const moTa = document.createElement("p");
+        moTa.textContent = mon.moTa;
+
+        const gia = document.createElement("span");
+        gia.className = "price";
+        gia.textContent = dinhDangTien(mon.gia);
+
+        const nut = document.createElement("button");
+        nut.textContent = "🛒 Thêm vào giỏ";
+        nut.onclick = () => themMon(mon.ten, mon.gia);
+
+        card.append(img, ten, moTa, gia, nut);
+        khung.appendChild(card);
+    });
+}
+
+/* GIỎ HÀNG */
+const gioHang = [];
+
+function themMon(ten, gia) {
+    const mon = gioHang.find(item => item.ten === ten);
+
+    if (mon) {
+        mon.soLuong++;
+    } else {
+        gioHang.push({
+            ten: ten,
+            gia: gia,
+            soLuong: 1
+        });
+    }
+
+    hienThiGioHang();
+}
+
+function thayDoiSoLuong(viTri, thayDoi) {
+    gioHang[viTri].soLuong += thayDoi;
+
+    if (gioHang[viTri].soLuong <= 0) {
+        gioHang.splice(viTri, 1);
+    }
+
+    hienThiGioHang();
+}
+
+function xoaMon(viTri) {
+    gioHang.splice(viTri, 1);
+    hienThiGioHang();
+}
+
+function hienThiGioHang() {
+    const khung = document.getElementById("giohang");
+    const tong = document.getElementById("tongtien");
+
+    khung.innerHTML = "";
+    let tongTien = 0;
+
+    if (gioHang.length === 0) {
+        khung.textContent = "Chưa có sản phẩm nào.";
+    }
+
+    gioHang.forEach((mon, i) => {
+        const thanhTien = mon.gia * mon.soLuong;
+        tongTien += thanhTien;
+
+        const dong = document.createElement("div");
+        dong.className = "cart-row";
+
+        const noiDung = document.createElement("span");
+        noiDung.textContent =
+            mon.ten + " - " + dinhDangTien(thanhTien);
+
+        const dieuKhien = document.createElement("div");
+        dieuKhien.className = "cart-controls";
+
+        const nutTru = document.createElement("button");
+        nutTru.textContent = "−";
+        nutTru.onclick = () => thayDoiSoLuong(i, -1);
+
+        const soLuong = document.createElement("strong");
+        soLuong.textContent = mon.soLuong;
+
+        const nutCong = document.createElement("button");
+        nutCong.textContent = "+";
+        nutCong.onclick = () => thayDoiSoLuong(i, 1);
+
+        const nutXoa = document.createElement("button");
+        nutXoa.textContent = "Xóa";
+        nutXoa.className = "remove-btn";
+        nutXoa.onclick = () => xoaMon(i);
+
+        dieuKhien.append(nutTru, soLuong, nutCong, nutXoa);
+        dong.append(noiDung, dieuKhien);
+        khung.appendChild(dong);
+    });
+
+    tong.textContent = dinhDangTien(tongTien);
+}
+
+/* XÁC NHẬN ĐƠN HÀNG MẪU */
+document.getElementById("orderForm")
+    .addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        if (gioHang.length === 0) {
+            alert("Vui lòng chọn món trước khi đặt hàng!");
+            return;
+        }
+
+        const ten = document.getElementById("ten").value;
+        const sdt = document.getElementById("sdt").value;
+        const diaChi =
+            document.getElementById("diachigiaohang").value;
+        const ghiChu =
+            document.getElementById("ghichu").value;
+
+        let chiTiet = "";
+        let tongTien = 0;
+
+        gioHang.forEach(mon => {
+            const thanhTien = mon.gia * mon.soLuong;
+            tongTien += thanhTien;
+
+            chiTiet +=
+                mon.ten + " x " + mon.soLuong +
+                ": " + dinhDangTien(thanhTien) + "\n";
+        });
+
+        alert(
+            "ĐƠN HÀNG MẪU - LƯỜI COFFE\n\n" +
+            "Khách hàng: " + ten + "\n" +
+            "Số điện thoại: " + sdt + "\n" +
+            "Địa chỉ: " + diaChi + "\n\n" +
+            chiTiet +
+            "\nTổng tiền: " + dinhDangTien(tongTien) +
+            "\nGhi chú: " + (ghiChu || "Không có") +
+            "\n\nĐây là bản demo. Đơn chưa được gửi."
+        );
+    });
+
+/* KHỞI TẠO */
+hienThiThucDon();
+hienThiGioHang();
+
+</script>
+
+</body>
+</html>
