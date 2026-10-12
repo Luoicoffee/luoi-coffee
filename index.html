@@ -3,13 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lười CoFFe | Cà phê & Trà sữa Hot Trend Cần Thơ</title>
-
-<!-- Thư viện EmailJS SDK -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
+<title>Lười CoFFe | Cà phê & Trà sữa Cần Thơ</title>
 <style>
-/* ===== GIAO DIỆN CHUNG ===== */
 * {
     margin: 0;
     padding: 0;
@@ -62,7 +57,7 @@ h2 {
     background: #782027;
 }
 
-/* ===== 1. THANH ĐIỀU HƯỚNG ===== */
+/* HEADER */
 header {
     background: #a82932;
     position: sticky;
@@ -104,7 +99,7 @@ nav a:hover {
     color: #ffdb99;
 }
 
-/* ===== 2. TRANG CHỦ ===== */
+/* BANNER */
 .banner {
     min-height: 450px;
     display: flex;
@@ -131,75 +126,7 @@ nav a:hover {
     margin-bottom: 25px;
 }
 
-/* ===== 3. ƯU ĐÃI THÀNH VIÊN ===== */
-.member {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin-top: 35px;
-    border-radius: 12px;
-    overflow: hidden;
-}
-
-.member-left {
-    background: #e52b39;
-    color: white;
-    padding: 45px 35px;
-}
-
-.member-left h2 {
-    color: white;
-    text-align: left;
-    font-size: 36px;
-    margin-bottom: 12px;
-}
-
-.member-right {
-    background: #f6e8d5;
-    padding: 45px 35px;
-    text-align: center;
-}
-
-.member-right h2 {
-    font-size: 25px;
-    margin-bottom: 15px;
-}
-
-.member-right .btn {
-    margin-top: 20px;
-}
-
-/* ===== 4. TIỂU SỬ QUÁN ===== */
-.about-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
-.about-card {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    text-align: center;
-    box-shadow: 0 4px 15px #0001;
-    padding-bottom: 25px;
-}
-
-.about-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-}
-
-.about-card h3 {
-    color: #a82932;
-    margin: 15px;
-}
-
-.about-card p {
-    padding: 0 18px;
-}
-
-/* ===== 5. THỰC ĐƠN ===== */
+/* THỰC ĐƠN */
 .menu-section {
     background: #f5eadb;
 }
@@ -212,10 +139,10 @@ nav a:hover {
 }
 
 .category-title {
-    font-size: 25px;
+    font-size: 24px;
     color: #922c32;
     margin: 35px 0 20px;
-    padding-bottom: 10px;
+    padding-bottom: 8px;
     border-bottom: 2px solid #dfc6ab;
 }
 
@@ -230,7 +157,7 @@ nav a:hover {
     border-radius: 12px;
     overflow: hidden;
     text-align: center;
-    padding-bottom: 22px;
+    padding-bottom: 20px;
     box-shadow: 0 4px 12px #0001;
     transition: transform 0.2s;
 }
@@ -241,35 +168,37 @@ nav a:hover {
 
 .product img {
     width: 100%;
-    height: 190px;
+    height: 180px;
     object-fit: cover;
 }
 
 .product h3 {
-    margin: 15px 8px 5px;
-    font-size: 19px;
+    margin: 12px 8px 5px;
+    font-size: 18px;
 }
 
 .product p {
     color: #786457;
-    font-size: 14px;
+    font-size: 13px;
     padding: 0 10px;
-    min-height: 45px;
+    min-height: 40px;
 }
 
 .price {
     display: block;
     color: #a82932;
-    font-size: 21px;
+    font-size: 20px;
     font-weight: bold;
-    margin: 12px 0;
+    margin: 10px 0;
 }
 
 .product button {
     margin: 5px 10px;
+    padding: 10px 15px;
+    font-size: 14px;
 }
 
-/* ===== 6. GIỎ HÀNG ===== */
+/* GIỎ HÀNG & ĐẶT HÀNG */
 .order-box {
     max-width: 650px;
     margin: auto;
@@ -299,7 +228,8 @@ nav a:hover {
 }
 
 .cart-controls button {
-    padding: 5px 10px;
+    padding: 4px 8px;
+    font-size: 14px;
 }
 
 .remove-btn {
@@ -334,17 +264,16 @@ form button {
     margin-top: 25px;
 }
 
-/* ===== 7. HỖ TRỢ ===== */
+/* ĐỊA CHỈ & HỖ TRỢ */
 .support {
     background: #f5eadb;
     text-align: center;
 }
 
 .support p {
-    margin: 12px 0;
+    margin: 10px 0;
 }
 
-/* ===== 8. ĐỊA CHỈ ===== */
 .address {
     text-align: center;
 }
@@ -369,7 +298,7 @@ form button {
     font-size: 18px;
 }
 
-/* ===== 9. CHÂN TRANG ===== */
+/* FOOTER */
 footer {
     background: #922c32;
     color: white;
@@ -377,12 +306,9 @@ footer {
     padding: 30px 15px;
 }
 
-/* ===== GIAO DIỆN ĐIỆN THOẠI ===== */
+/* RESPONSIVE */
 @media (max-width: 900px) {
-    .navbar {
-        justify-content: center;
-    }
-    nav {
+    .navbar, nav {
         justify-content: center;
     }
     .menu-grid {
@@ -391,23 +317,12 @@ footer {
 }
 
 @media (max-width: 600px) {
-    .member,
-    .about-grid {
-        grid-template-columns: 1fr;
-    }
     .menu-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 12px;
     }
     .product img {
-        height: 145px;
-    }
-    .product h3 {
-        font-size: 16px;
-    }
-    .product button {
-        padding: 10px;
-        font-size: 12px;
+        height: 130px;
     }
 }
 </style>
@@ -415,16 +330,15 @@ footer {
 
 <body>
 
-<!-- ===== THANH ĐIỀU HƯỚNG ===== -->
+<!-- THANH ĐIỀU HƯỚNG -->
 <header>
     <div class="container navbar">
         <a href="#trangchu" class="logo">☕ Lười CoFFe</a>
         <nav>
             <a href="#trangchu">TRANG CHỦ</a>
             <a href="#thucdon">THỰC ĐƠN</a>
-            <a href="#tieusu">TIỂU SỬ QUÁN</a>
-            <a href="#hotro">HỖ TRỢ</a>
             <a href="#dathang">ĐẶT HÀNG</a>
+            <a href="#hotro">HỖ TRỢ</a>
             <a href="#diachi">ĐỊA CHỈ</a>
         </nav>
     </div>
@@ -432,75 +346,35 @@ footer {
 
 <main>
 
-<!-- ===== TRANG CHỦ ===== -->
+<!-- TRANG CHỦ -->
 <section id="trangchu" class="banner">
     <div class="container">
         <div class="banner-content">
             <h1>Lười một chút,<br>chill một đời!</h1>
-            <p>Khám phá menu đồ uống hot trend và bánh ngọt hấp dẫn tại Lười CoFFe.</p>
+            <p>Thưởng thức hương vị cà phê đậm đà và các món hot trend tại Lười CoFFe.</p>
             <a href="#thucdon" class="btn">KHÁM PHÁ THỰC ĐƠN</a>
         </div>
     </div>
 </section>
 
-<!-- ===== ƯU ĐÃI THÀNH VIÊN ===== -->
-<div class="container">
-    <div class="member">
-        <div class="member-left">
-            <h2>LƯỜI CLUB</h2>
-            <h3>Chào bạn mới!</h3>
-            <p>Những ưu đãi hấp dẫn dành riêng cho khách hàng thân thiết.</p>
-        </div>
-        <div class="member-right">
-            <h2>Thành viên Lười CoFFe</h2>
-            <p>Thưởng thức các món ngon hot trend mỗi ngày cùng bạn bè.</p>
-            <a href="#hotro" class="btn">TÌM HIỂU NGAY</a>
-        </div>
-    </div>
-</div>
-
-<!-- ===== TIỂU SỬ QUÁN ===== -->
-<section id="tieusu">
-    <div class="container">
-        <h2>Đồng hành cùng Lười CoFFe</h2>
-        <div class="about-grid">
-            <article class="about-card">
-                <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=600" alt="Không gian quán" loading="lazy">
-                <h3>KHÔNG GIAN THƯ GIÃN</h3>
-                <p>Một góc nhỏ để bạn học tập, làm việc và gặp gỡ bạn bè.</p>
-            </article>
-            <article class="about-card">
-                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600" alt="Pha chế" loading="lazy">
-                <h3>XU HƯỚNG MỚI MẺ</h3>
-                <p>Liên tục cập nhật các món nước và bánh ngọt được giới trẻ yêu thích nhất.</p>
-            </article>
-            <article class="about-card">
-                <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=600" alt="Hạt cà phê" loading="lazy">
-                <h3>CHẤT LƯỢNG HÀNG ĐẦU</h3>
-                <p>Nguyên liệu tươi sạch, an toàn và pha chế chuẩn vị.</p>
-            </article>
-        </div>
-    </div>
-</section>
-
-<!-- ===== THỰC ĐƠN ===== -->
+<!-- THỰC ĐƠN -->
 <section id="thucdon" class="menu-section">
     <div class="container">
-        <h2>☕ Thực đơn Hot Trend nhà Lười</h2>
-        <p class="menu-intro">Thỏa sức lựa chọn các loại cà phê, trà sữa, trà trái cây và bánh ngọt thịnh hành nhất!</p>
+        <h2>☕ Thực đơn nhà Lười</h2>
+        <p class="menu-intro">Thỏa thích lựa chọn thức uống và bánh ngọt thơm ngon mỗi ngày!</p>
 
-        <h3 class="category-title">☕ Cà phê truyền thống & Hiện đại</h3>
+        <h3 class="category-title">☕ Cà phê</h3>
         <div id="menu-caphe" class="menu-grid"></div>
 
-        <h3 class="category-title">🍵 Trà sữa & Trà trái cây Hot Trend</h3>
+        <h3 class="category-title">🍵 Trà sữa & Trà trái cây</h3>
         <div id="menu-tra" class="menu-grid"></div>
 
-        <h3 class="category-title">🍮 Bánh ngọt & Tráng miệng đặc sắc</h3>
+        <h3 class="category-title">🍮 Bánh ngọt & Tráng miệng</h3>
         <div id="menu-trangmieng" class="menu-grid"></div>
     </div>
 </section>
 
-<!-- ===== ĐẶT HÀNG ===== -->
+<!-- ĐẶT HÀNG -->
 <section id="dathang">
     <div class="container">
         <h2>🛒 Đặt hàng tại Lười CoFFe</h2>
@@ -522,23 +396,22 @@ footer {
                 <label for="ghichu">Ghi chú</label>
                 <textarea id="ghichu" rows="2" placeholder="Ít đá, ít đường..."></textarea>
 
-                <button type="submit">XÁC NHẬN ĐẶT HÀNG & GỬI EMAIL</button>
+                <button type="submit">XÁC NHẬN ĐẶT HÀNG</button>
             </form>
         </div>
     </div>
 </section>
 
-<!-- ===== HỖ TRỢ ===== -->
+<!-- HỖ TRỢ -->
 <section id="hotro" class="support">
     <div class="container">
         <h2>☎ Hỗ trợ khách hàng</h2>
-        <p>Cần tư vấn về thực đơn hoặc đơn hàng?</p>
         <p>Hotline: 0123 456 789</p>
         <p>Email: luoicoffee@example.com</p>
     </div>
 </section>
 
-<!-- ===== ĐỊA CHỈ ===== -->
+<!-- ĐỊA CHỈ -->
 <section id="diachi" class="address">
     <div class="container">
         <h2>📍 Địa chỉ Lười CoFFe</h2>
@@ -552,41 +425,32 @@ footer {
 
 </main>
 
-<!-- ===== CHÂN TRANG ===== -->
 <footer>
     <h3>☕ Lười CoFFe</h3>
     <p>Lười một chút, chill một đời!</p>
     <p>© 2026 by Khoa</p>
 </footer>
 
-<!-- ===== JAVASCRIPT ===== -->
+<!-- JAVASCRIPT XỬ LÝ HIỂN THỊ VÀ GIỎ HÀNG -->
 <script>
 const danhSachMon = [
-    /* Nhóm Cà phê (4 món) */
-    { ten: "Cà phê đen", gia: 25000, moTa: "Cà phê đen nguyên chất đậm đà, thơm nồng", anh: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=500", nhom: "caphe" },
-    { ten: "Cà phê sữa", gia: 30000, moTa: "Cà phê sữa pha phin truyền thống béo ngọt", anh: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=500", nhom: "caphe" },
-    { ten: "Cà phê muối", gia: 39000, moTa: "Cà phê kết hợp lớp kem muối béo mịn độc đáo", anh: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=500", nhom: "caphe" },
-    { ten: "Bạc xỉu", gia: 35000, moTa: "Nhiều sữa tươi kết hợp chút cà phê thơm béo", anh: "https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?w=500", nhom: "caphe" },
+    /* Nhóm Cà phê */
+    { ten: "Cà phê đen", gia: 25000, moTa: "Cà phê đen nguyên chất đậm đà", anh: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=500", nhom: "caphe" },
+    { ten: "Cà phê sữa", gia: 30000, moTa: "Cà phê sữa pha phin béo ngọt", anh: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=500", nhom: "caphe" },
+    { ten: "Cà phê muối", gia: 39000, moTa: "Cà phê kết hợp kem muối béo mịn", anh: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=500", nhom: "caphe" },
+    { ten: "Bạc xỉu", gia: 35000, moTa: "Nhiều sữa tươi thơm béo nhẹ nhàng", anh: "https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?w=500", nhom: "caphe" },
 
-    /* Nhóm Trà & Trà sữa Hot Trend (10 món) */
-    { ten: "Trà sữa ô long nướng", gia: 42000, moTa: "Trà ô long thơm đậm vị nướng kết hợp sữa béo ngậy", anh: "https://images.unsplash.com/photo-1541658016709-82535e94bc69?w=500", nhom: "tra" },
-    { ten: "Trà ô long mãng cầu", gia: 45000, moTa: "Trà ô long thanh mát kết hợp mãng cầu xiêm chua ngọt", anh: "https://images.unsplash.com/photo-1556881286-fc6915169721?w=500", nhom: "tra" },
-    { ten: "Sữa tươi trân châu đường đen", gia: 45000, moTa: "Sữa tươi thanh béo cùng trân châu dẻo quyện sốt đường đen", anh: "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=500", nhom: "tra" },
-    { ten: "Hồng trà kem trứng", gia: 42000, moTa: "Hồng trà thơm đậm phủ lớp kem trứng béo ngậy bùng nổ", anh: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=500", nhom: "tra" },
-    { ten: "Trà đào cam sả", gia: 39000, moTa: "Trà thanh mát kết hợp đào miếng, cam tươi và sả", anh: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=500", nhom: "tra" },
-    { ten: "Trà vải hoa hồng", gia: 40000, moTa: "Trà trái cây thơm ngát hương hoa hồng và quả vải mọng nước", anh: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=500", nhom: "tra" },
-    { ten: "Matcha latte", gia: 45000, moTa: "Bột matcha Nhật Bản nguyên chất hòa sữa tươi", anh: "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?w=500", nhom: "tra" },
-    { ten: "Trà lựu đỏ hồng trà", gia: 42000, moTa: "Trà đỏ kết hợp hạt lựu tươi giòn sần sật thanh mát", anh: "https://images.unsplash.com/photo-1536935338788-846bb9981813?w=500", nhom: "tra" },
-    { ten: "Trà sữa thái xanh", gia: 35000, moTa: "Trà thái xanh thơm mát đặc trưng, ngọt dịu vừa vặn", anh: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=500", nhom: "tra" },
-    { ten: "Sủi cảo trái cây (Fruit Tea)", gia: 45000, moTa: "Đại tiệc trái cây tươi mix cùng trà nhài thơm lừng", anh: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=500", nhom: "tra" },
+    /* Nhóm Trà & Trà sữa */
+    { ten: "Trà sữa ô long nướng", gia: 42000, moTa: "Trà ô long thơm đậm vị nướng kết hợp sữa", anh: "https://images.unsplash.com/photo-1541658016709-82535e94bc69?w=500", nhom: "tra" },
+    { ten: "Trà ô long mãng cầu", gia: 45000, moTa: "Trà ô long thanh mát kết hợp mãng cầu chua ngọt", anh: "https://images.unsplash.com/photo-1556881286-fc6915169721?w=500", nhom: "tra" },
+    { ten: "Sữa tươi trân châu", gia: 45000, moTa: "Sữa tươi thanh béo cùng trân châu đường đen", anh: "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=500", nhom: "tra" },
+    { ten: "Trà đào cam sả", gia: 39000, moTa: "Trà thanh mát kết hợp đào miếng và cam sả", anh: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=500", nhom: "tra" },
 
-    /* Nhóm Bánh ngọt & Tráng miệng (6 món) */
-    { ten: "Bánh flan", gia: 22000, moTa: "Bánh flan mềm mịn, béo thơm vị trứng với caramel sánh đậm", anh: "https://images.unsplash.com/photo-1527661591475-527312dd65f5?w=500", nhom: "trangmieng" },
-    { ten: "Bánh Tiramisu", gia: 38000, moTa: "Bánh ngọt Ý vị cà phê kết hợp lớp phô mai mascarpone béo mịn", anh: "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=500", nhom: "trangmieng" },
-    { ten: "Bánh bông lan trứng muối", gia: 35000, moTa: "Cốt bánh mềm mịn phủ sốt trứng muối đậm đà và chà bông", anh: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=500", nhom: "trangmieng" },
-    { ten: "Bánh Mousse Xoài", gia: 36000, moTa: "Lớp mousse xoài tươi chua ngọt thanh mát tan chảy trong miệng", anh: "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=500", nhom: "trangmieng" },
-    { ten: "Rau câu dừa", gia: 15000, moTa: "Rau câu nước cốt dừa thanh mát, giòn sần sật giải nhiệt", anh: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=500", nhom: "trangmieng" },
-    { ten: "Bánh Brownie sô-cô-la", gia: 32000, moTa: "Bánh sô-cô-la đậm đặc, ngọt ngào thơm nức mũi", anh: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=500", nhom: "trangmieng" }
+    /* Nhóm Bánh ngọt & Tráng miệng */
+    { ten: "Bánh flan", gia: 22000, moTa: "Bánh flan mềm mịn, béo thơm vị trứng caramel", anh: "https://images.unsplash.com/photo-1527661591475-527312dd65f5?w=500", nhom: "trangmieng" },
+    { ten: "Bánh Tiramisu", gia: 38000, moTa: "Bánh ngọt Ý vị cà phê phô mai béo mịn", anh: "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=500", nhom: "trangmieng" },
+    { ten: "Bánh bông lan trứng muối", gia: 35000, moTa: "Cốt bánh mềm phủ sốt trứng muối đậm đà", anh: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=500", nhom: "trangmieng" },
+    { ten: "Rau câu dừa", gia: 15000, moTa: "Rau câu dừa thanh mát, giòn sần sật giải nhiệt", anh: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=500", nhom: "trangmieng" }
 ];
 
 function dinhDangTien(soTien) {
@@ -609,9 +473,6 @@ function hienThiThucDon() {
         img.src = mon.anh;
         img.alt = mon.ten;
         img.loading = "lazy";
-        img.onerror = function() {
-            this.src = "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500";
-        };
 
         const ten = document.createElement("h3");
         ten.textContent = mon.ten;
@@ -715,7 +576,7 @@ function hienThiGioHang() {
     tong.textContent = dinhDangTien(tongTien);
 }
 
-// Xử lý EmailJS
+// Xử lý nút đặt hàng trực tiếp thông báo
 document.getElementById("orderForm").addEventListener("submit", function(event) {
     event.preventDefault();
     if (gioHang.length === 0) {
@@ -724,37 +585,11 @@ document.getElementById("orderForm").addEventListener("submit", function(event) 
     }
 
     const ten = document.getElementById("ten").value;
-    const sdt = document.getElementById("sdt").value;
-    const diaChi = document.getElementById("diachigiaohang").value;
-    const ghiChu = document.getElementById("ghichu").value;
-
-    let chiTiet = "";
-    let tongTien = 0;
-    gioHang.forEach(function(mon) {
-        const thanhTien = mon.gia * mon.soLuong;
-        tongTien += thanhTien;
-        chiTiet += `- ${mon.ten} x ${mon.soLuong}: ${dinhDangTien(thanhTien)}\n`;
-    });
-
-    const templateParams = {
-        ten: ten,
-        sdt: sdt,
-        diachi: diaChi,
-        chitiet: chiTiet,
-        tongtien: dinhDangTien(tongTien),
-        ghichu: ghiChu || "Không có"
-    };
-
-    emailjs.send('service_bw6hxcy', '2bfde0a', templateParams, 'KqKvIm8dkq4tuwdy')
-      .then(function() {
-         alert('Đặt hàng thành công! Đơn hàng đã được gửi về Gmail.');
-         gioHang.length = 0;
-         hienThiGioHang();
-         document.getElementById("orderForm").reset();
-      }, function(error) {
-         console.log('Lỗi:', error);
-         alert('Có lỗi khi gửi email, vui lòng thử lại.');
-      });
+    alert("Cảm ơn bạn " + ten + "! Đặt hàng thành công. Quán sẽ chuẩn bị đơn hàng và giao đến bạn sớm nhất!");
+    
+    gioHang.length = 0;
+    hienThiGioHang();
+    document.getElementById("orderForm").reset();
 });
 
 hienThiThucDon();
