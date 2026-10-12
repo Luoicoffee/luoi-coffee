@@ -929,16 +929,22 @@ document.getElementById("orderForm")
             chiTiet += mon.ten + " x " + mon.soLuong + ": " + dinhDangTien(thanhTien) + "\n";
         });
 
-        alert(
-            "ĐƠN HÀNG MẪU - LƯỜI COFFE\n\n" +
-            "Khách hàng: " + ten + "\n" +
-            "Số điện thoại: " + sdt + "\n" +
-            "Địa chỉ: " + diaChi + "\n\n" +
-            chiTiet +
-            "\nTổng tiền: " + dinhDangTien(tongTien) +
-            "\nGhi chú: " + (ghiChu || "Không có") +
-            "\n\nĐây là bản demo. Đơn chưa được gửi."
-        );
+        const thongTinDon = {
+        ten: ten,
+        sdt: sdt,
+        diachi: diaChi,
+        chitiet: chiTiet,
+        tongtien: dinhDangTien(tongTien),
+        ghichu: ghiChu || "Không có"
+    };
+
+    // Gọi hàm gửi email
+    guiDonHang(thongTinDon);
+
+    // Đặt lại giỏ hàng và form sau khi gửi thành công
+    gioHang.length = 0;
+    hienThiGioHang();
+    document.getElementById("orderForm").reset();
     });
 
 hienThiThucDon();
