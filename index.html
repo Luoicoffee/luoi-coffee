@@ -361,7 +361,7 @@ footer {
 <section id="thucdon" class="menu-section">
     <div class="container">
         <h2>☕ Thực đơn nhà Lười</h2>
-        <p class="menu-intro">Thỏa thích lựa chọn thức uống và bánh ngọt thơm ngon mỗi ngày!</p>
+        <p class="menu-intro">Thỏa thích lựa chọn thức uống và bánh ngọt thơm ngon chuẩn vị!</p>
 
         <h3 class="category-title">☕ Cà phê</h3>
         <div id="menu-caphe" class="menu-grid"></div>
@@ -435,16 +435,16 @@ footer {
 <script>
 const danhSachMon = [
     /* Nhóm Cà phê */
-    { ten: "Cà phê đen", gia: 25000, moTa: "Cà phê đen nguyên chất đậm đà", anh: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=500", nhom: "caphe" },
-    { ten: "Cà phê sữa", gia: 30000, moTa: "Cà phê sữa pha phin béo ngọt", anh: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=500", nhom: "caphe" },
-    { ten: "Cà phê muối", gia: 39000, moTa: "Cà phê kết hợp kem muối béo mịn", anh: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=500", nhom: "caphe" },
+    { ten: "Cà phê đen", gia: 25000, moTa: "Cà phê đen nguyên chất đậm đà", anh: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500", nhom: "caphe" },
+    { ten: "Cà phê sữa", gia: 30000, moTa: "Cà phê sữa pha phin béo ngọt", anh: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=500", nhom: "caphe" },
+    { ten: "Cà phê muối", gia: 39000, moTa: "Cà phê kết hợp kem muối béo mịn", anh: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=500", nhom: "caphe" },
     { ten: "Bạc xỉu", gia: 35000, moTa: "Nhiều sữa tươi thơm béo nhẹ nhàng", anh: "https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?w=500", nhom: "caphe" },
 
     /* Nhóm Trà & Trà sữa */
-    { ten: "Trà sữa ô long nướng", gia: 42000, moTa: "Trà ô long thơm đậm vị nướng kết hợp sữa", anh: "https://images.unsplash.com/photo-1541658016709-82535e94bc69?w=500", nhom: "tra" },
-    { ten: "Trà ô long mãng cầu", gia: 45000, moTa: "Trà ô long thanh mát kết hợp mãng cầu chua ngọt", anh: "https://images.unsplash.com/photo-1556881286-fc6915169721?w=500", nhom: "tra" },
-    { ten: "Sữa tươi trân châu", gia: 45000, moTa: "Sữa tươi thanh béo cùng trân châu đường đen", anh: "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=500", nhom: "tra" },
-    { ten: "Trà đào cam sả", gia: 39000, moTa: "Trà thanh mát kết hợp đào miếng và cam sả", anh: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=500", nhom: "tra" },
+    { ten: "Trà sữa ô long nướng", gia: 42000, moTa: "Trà ô long thơm đậm vị nướng kết hợp sữa", anh: "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=500", nhom: "tra" },
+    { ten: "Trà ô long mãng cầu", gia: 45000, moTa: "Trà ô long thanh mát kết hợp mãng cầu chua ngọt", anh: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=500", nhom: "tra" },
+    { ten: "Sữa tươi trân châu", gia: 45000, moTa: "Sữa tươi thanh béo cùng trân châu đường đen", anh: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=500", nhom: "tra" },
+    { ten: "Trà đào cam sả", gia: 39000, moTa: "Trà thanh mát kết hợp đào miếng và cam sả", anh: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=500", nhom: "tra" },
 
     /* Nhóm Bánh ngọt & Tráng miệng */
     { ten: "Bánh flan", gia: 22000, moTa: "Bánh flan mềm mịn, béo thơm vị trứng caramel", anh: "https://images.unsplash.com/photo-1527661591475-527312dd65f5?w=500", nhom: "trangmieng" },
@@ -576,7 +576,6 @@ function hienThiGioHang() {
     tong.textContent = dinhDangTien(tongTien);
 }
 
-// Xử lý nút đặt hàng trực tiếp thông báo
 document.getElementById("orderForm").addEventListener("submit", function(event) {
     event.preventDefault();
     if (gioHang.length === 0) {
