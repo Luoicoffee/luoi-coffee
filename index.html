@@ -954,39 +954,7 @@ hienThiGioHang();
     
     <!-- DÁN ĐOẠN MÃ EMAILJS VÀO ĐÂY (ngay trước thẻ đóng body) -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="text/javascript">
-       (function(){
-          emailjs.init({
-            publicKey: "KqKvIm8dkq4tuwdy",
-          });
-       })();
-    </script>
-    <script>
-      function guiDonHang(thongTinDon) {
-        const templateParams = {
-          ten: thongTinDon.ten,
-          sdt: thongTinDon.sdt,
-          diachi: thongTinDon.diachi,
-          chitiet: thongTinDon.chitiet,
-          tongtien: thongTinDon.tongtien,
-          ghichu: thongTinDon.ghichu
-        };
-
-     <!-- Thư viện EmailJS SDK -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-<script type="text/javascript">
-  function guiDonHang(thongTinDon) {
-    const templateParams = {
-      ten: thongTinDon.ten,
-      sdt: thongTinDon.sdt,
-      diachi: thongTinDon.diachi,
-      chitiet: thongTinDon.chitiet,
-      tongtien: thongTinDon.tongtien,
-      ghichu: thongTinDon.ghichu
-    };
-
- <!-- Thư viện EmailJS phiên bản chuẩn -->
+  <!-- Thư viện EmailJS SDK -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 <script>
@@ -1009,7 +977,5 @@ hienThiGioHang();
       });
   }
 </script>
-</script>
-</html>
 </body>
 </html>
