@@ -563,6 +563,11 @@ footer {
             🍵 Matcha, ca cao và trà
         </h3>
         <div id="menu-tra" class="menu-grid"></div>
+
+        <h3 class="category-title">
+            🍮 Bánh ngọt & Tráng miệng
+        </h3>
+        <div id="menu-trangmieng" class="menu-grid"></div>
     </div>
 </section>
 
@@ -763,6 +768,20 @@ const danhSachMon = [
         moTa: "Chua ngọt, thanh mát",
         anh: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=500",
         nhom: "tra"
+    },
+    {
+        ten: "Bánh flan",
+        gia: 15000,
+        moTa: "Bánh flan mềm mịn, béo thơm",
+        anh: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=500",
+        nhom: "trangmieng"
+    },
+    {
+        ten: "Rau câu",
+        gia: 15000,
+        moTa: "Rau câu thanh mát, giòn sần sật",
+        anh: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=500",
+        nhom: "trangmieng"
     }
 ];
 
@@ -772,12 +791,14 @@ function dinhDangTien(soTien) {
 
 function hienThiThucDon() {
     danhSachMon.forEach(mon => {
-        const khung = document.getElementById(
-            mon.nhom === "caphe"
-                ? "menu-caphe"
-                : "menu-tra"
-        );
+        let idKhung = "menu-caphe";
+        if (mon.nhom === "tra") {
+            idKhung = "menu-tra";
+        } else if (mon.nhom === "trangmieng") {
+            idKhung = "menu-trangmieng";
+        }
 
+        const khung = document.getElementById(idKhung);
         if (!khung) return;
 
         const card = document.createElement("article");
