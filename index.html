@@ -773,7 +773,7 @@ const danhSachMon = [
         ten: "Bánh flan",
         gia: 15000,
         moTa: "Bánh flan mềm mịn, béo thơm",
-        anh: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=500",
+        anh: "https://images.unsplash.com/photo-1527515545081-5db817172677?w=500",
         nhom: "trangmieng"
     },
     {
@@ -786,56 +786,4 @@ const danhSachMon = [
 ];
 
 function dinhDangTien(soTien) {
-    return soTien.toLocaleString("vi-VN") + "đ";
-}
-
-function hienThiThucDon() {
-    danhSachMon.forEach(mon => {
-        let idKhung = "menu-caphe";
-        if (mon.nhom === "tra") {
-            idKhung = "menu-tra";
-        } else if (mon.nhom === "trangmieng") {
-            idKhung = "menu-trangmieng";
-        }
-
-        const khung = document.getElementById(idKhung);
-        if (!khung) return;
-
-        const card = document.createElement("article");
-        card.className = "product";
-
-        const img = document.createElement("img");
-        img.src = mon.anh;
-        img.alt = mon.ten;
-        img.loading = "lazy";
-
-        img.onerror = function() {
-            this.onerror = null;
-            this.src = "https://placehold.co/500x350/f5e9d7/6a422b?text=Luoi+CoFFe";
-        };
-
-        const ten = document.createElement("h3");
-        ten.textContent = mon.ten;
-
-        const moTa = document.createElement("p");
-        moTa.textContent = mon.moTa;
-
-        const gia = document.createElement("span");
-        gia.className = "price";
-        gia.textContent = dinhDangTien(mon.gia);
-
-        const nut = document.createElement("button");
-        nut.textContent = "🛒 Thêm vào giỏ";
-        nut.onclick = () => themMon(mon.ten, mon.gia);
-
-        card.append(img, ten, moTa, gia, nut);
-        khung.appendChild(card);
-    });
-}
-
-const gioHang = [];
-
-function themMon(ten, gia) {
-    const mon = gioHang.find(item => item.ten === ten);
-    if (mon) {
-        mon.soLuong++;
+    return soTien.toLocaleString("vi-VN
