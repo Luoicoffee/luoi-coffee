@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -565,7 +564,6 @@ footer {
         </h3>
         <div id="menu-tra" class="menu-grid"></div>
     </div>
-  
 </section>
 
 <!-- ===== ĐẶT HÀNG ===== -->
@@ -681,8 +679,6 @@ footer {
 
 <!-- ===== JAVASCRIPT ===== -->
 <script>
-
-/* DANH SÁCH 12 MÓN */
 const danhSachMon = [
     {
         ten: "Cà phê đen",
@@ -767,16 +763,13 @@ const danhSachMon = [
         moTa: "Chua ngọt, thanh mát",
         anh: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=500",
         nhom: "tra"
-    },
-
+    }
 ];
 
-/* ĐỊNH DẠNG TIỀN */
 function dinhDangTien(soTien) {
     return soTien.toLocaleString("vi-VN") + "đ";
 }
 
-/* HIỂN THỊ THỰC ĐƠN */
 function hienThiThucDon() {
     danhSachMon.forEach(mon => {
         const khung = document.getElementById(
@@ -784,6 +777,8 @@ function hienThiThucDon() {
                 ? "menu-caphe"
                 : "menu-tra"
         );
+
+        if (!khung) return;
 
         const card = document.createElement("article");
         card.className = "product";
@@ -795,8 +790,7 @@ function hienThiThucDon() {
 
         img.onerror = function() {
             this.onerror = null;
-            this.src =
-                "https://placehold.co/500x350/f5e9d7/6a422b?text=Luoi+CoFFe";
+            this.src = "https://placehold.co/500x350/f5e9d7/6a422b?text=Luoi+CoFFe";
         };
 
         const ten = document.createElement("h3");
@@ -818,32 +812,23 @@ function hienThiThucDon() {
     });
 }
 
-/* GIỎ HÀNG */
 const gioHang = [];
 
 function themMon(ten, gia) {
     const mon = gioHang.find(item => item.ten === ten);
-
     if (mon) {
         mon.soLuong++;
     } else {
-        gioHang.push({
-            ten: ten,
-            gia: gia,
-            soLuong: 1
-        });
+        gioHang.push({ ten: ten, gia: gia, soLuong: 1 });
     }
-
     hienThiGioHang();
 }
 
 function thayDoiSoLuong(viTri, thayDoi) {
     gioHang[viTri].soLuong += thayDoi;
-
     if (gioHang[viTri].soLuong <= 0) {
         gioHang.splice(viTri, 1);
     }
-
     hienThiGioHang();
 }
 
@@ -871,8 +856,7 @@ function hienThiGioHang() {
         dong.className = "cart-row";
 
         const noiDung = document.createElement("span");
-        noiDung.textContent =
-            mon.ten + " - " + dinhDangTien(thanhTien);
+        noiDung.textContent = mon.ten + " - " + dinhDangTien(thanhTien);
 
         const dieuKhien = document.createElement("div");
         dieuKhien.className = "cart-controls";
@@ -901,7 +885,6 @@ function hienThiGioHang() {
     tong.textContent = dinhDangTien(tongTien);
 }
 
-/* XÁC NHẬN ĐƠN HÀNG MẪU */
 document.getElementById("orderForm")
     .addEventListener("submit", function(event) {
         event.preventDefault();
@@ -913,10 +896,8 @@ document.getElementById("orderForm")
 
         const ten = document.getElementById("ten").value;
         const sdt = document.getElementById("sdt").value;
-        const diaChi =
-            document.getElementById("diachigiaohang").value;
-        const ghiChu =
-            document.getElementById("ghichu").value;
+        const diaChi = document.getElementById("diachigiaohang").value;
+        const ghiChu = document.getElementById("ghichu").value;
 
         let chiTiet = "";
         let tongTien = 0;
@@ -924,10 +905,7 @@ document.getElementById("orderForm")
         gioHang.forEach(mon => {
             const thanhTien = mon.gia * mon.soLuong;
             tongTien += thanhTien;
-
-            chiTiet +=
-                mon.ten + " x " + mon.soLuong +
-                ": " + dinhDangTien(thanhTien) + "\n";
+            chiTiet += mon.ten + " x " + mon.soLuong + ": " + dinhDangTien(thanhTien) + "\n";
         });
 
         alert(
@@ -942,10 +920,8 @@ document.getElementById("orderForm")
         );
     });
 
-/* KHỞI TẠO */
 hienThiThucDon();
 hienThiGioHang();
-
 </script>
 
 </body>
