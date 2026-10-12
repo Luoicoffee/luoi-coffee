@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lười CoFFe | Cà phê & Trà sữa Cần Thơ</title>
 
+<!-- Thư viện EmailJS SDK đặt ngay ở phần head để luôn sẵn sàng -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
 <style>
 /* ===== GIAO DIỆN CHUNG ===== */
 * {
@@ -906,62 +909,15 @@ function hienThiGioHang() {
     tong.textContent = dinhDangTien(tongTien);
 }
 
-document.getElementById("orderForm")
-    .addEventListener("submit", function(event) {
-        event.preventDefault();
-
-        if (gioHang.length === 0) {
-            alert("Vui lòng chọn món trước khi đặt hàng!");
-            return;
-        }
-
-        const ten = document.getElementById("ten").value;
-        const sdt = document.getElementById("sdt").value;
-        const diaChi = document.getElementById("diachigiaohang").value;
-        const ghiChu = document.getElementById("ghichu").value;
-
-        let chiTiet = "";
-        let tongTien = 0;
-
-        gioHang.forEach(mon => {
-            const thanhTien = mon.gia * mon.soLuong;
-            tongTien += thanhTien;
-            chiTiet += mon.ten + " x " + mon.soLuong + ": " + dinhDangTien(thanhTien) + "\n";
-        });
-
-        const thongTinDon = {
-        ten: ten,
-        sdt: sdt,
-        diachi: diaChi,
-        chitiet: chiTiet,
-        tongtien: dinhDangTien(tongTien),
-        ghichu: ghiChu || "Không có"
-    };
-
-    // Gọi hàm gửi email
-    guiDonHang(thongTinDon);
-
-    // Đặt lại giỏ hàng và form sau khi gửi thành công
-    gioHang.length = 0;
-    hienThiGioHang();
-    document.getElementById("orderForm").reset();
-    });
-
-hienThiThucDon();
-hienThiGioHang();
-</script>
-<!-- Các phần code HTML khác của trang web -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-<script>
-  function guiDonHang(thongTinDon) {
+// Hàm gửi đơn hàng qua EmailJS
+function guiDonHang(thongTinDon) {
     const templateParams = {
-      ten: thongTinDon.ten,
-      sdt: thongTinDon.sdt,
-      diachi: thongTinDon.diachi,
-      chitiet: thongTinDon.chitiet,
-      tongtien: thongTinDon.tongtien,
-      ghichu: thongTinDon.ghichu
+        ten: thongTinDon.ten,
+        sdt: thongTinDon.sdt,
+        diachi: thongTinDon.diachi,
+        chitiet: thongTinDon.chitiet,
+        tongtien: thongTinDon.tongtien,
+        ghichu: thongTinDon.ghichu
     };
 
     emailjs.send('service_bw6hxcy', 'template_n1wxs0f', templateParams, 'KqKvIm8dkq4tuwdy')
@@ -971,7 +927,7 @@ hienThiGioHang();
          console.log('Lỗi chi tiết:', error);
          alert('Có lỗi xảy ra, vui lòng thử lại.');
       });
-  }
-</script>
-</body>
-</html>
+}
+
+document.getElementById("orderForm")
+    .addEventListener("submit", function(
