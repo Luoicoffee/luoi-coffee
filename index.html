@@ -986,15 +986,29 @@ hienThiGioHang();
       ghichu: thongTinDon.ghichu
     };
 
-    // Gửi email kèm Public Key trực tiếp làm tham số thứ 4
+ <!-- Thư viện EmailJS phiên bản chuẩn -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+  function guiDonHang(thongTinDon) {
+    const templateParams = {
+      ten: thongTinDon.ten,
+      sdt: thongTinDon.sdt,
+      diachi: thongTinDon.diachi,
+      chitiet: thongTinDon.chitiet,
+      tongtien: thongTinDon.tongtien,
+      ghichu: thongTinDon.ghichu
+    };
+
     emailjs.send('service_bw6hxcy', 'template_n1wxs0f', templateParams, 'KqKvIm8dkq4tuwdy')
       .then(function(response) {
-         alert('Đặt hàng thành công! Đơn hàng đã gửi về Gmail.');
+         alert('Đặt hàng thành công! Đơn hàng đã được gửi về Gmail.');
       }, function(error) {
-         console.log('Lỗi:', error);
+         console.log('Lỗi chi tiết:', error);
          alert('Có lỗi xảy ra, vui lòng thử lại.');
       });
   }
+</script>
 </script>
 </html>
 </body>
