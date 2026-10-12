@@ -511,4 +511,254 @@ footer {
 
             <form id="orderForm">
                 <label for="ten">Họ và tên</label>
-                <input id="ten" type="text" placeholder="Nhập họ và
+                <input id="ten" type="text" placeholder="Nhập họ và tên" required>
+
+                <label for="sdt">Số điện thoại</label>
+                <input id="sdt" type="tel" placeholder="Nhập số điện thoại" required>
+
+                <label for="diachigiaohang">Địa chỉ giao hàng</label>
+                <textarea id="diachigiaohang" rows="3" placeholder="Nhập địa chỉ nhận hàng" required></textarea>
+
+                <label for="ghichu">Ghi chú</label>
+                <textarea id="ghichu" rows="2" placeholder="Ít đá, ít đường..."></textarea>
+
+                <button type="submit">XÁC NHẬN ĐẶT HÀNG & GỬI EMAIL</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- ===== HỖ TRỢ ===== -->
+<section id="hotro" class="support">
+    <div class="container">
+        <h2>☎ Hỗ trợ khách hàng</h2>
+        <p>Cần tư vấn về thực đơn hoặc đơn hàng?</p>
+        <p>Hotline: 0123 456 789</p>
+        <p>Email: luoicoffee@example.com</p>
+    </div>
+</section>
+
+<!-- ===== ĐỊA CHỈ ===== -->
+<section id="diachi" class="address">
+    <div class="container">
+        <h2>📍 Địa chỉ Lười CoFFe</h2>
+        <div class="address-card">
+            <h3>☕ Lười CoFFe - Cần Thơ</h3>
+            <p>Số 25, đường 3/2 Tân An, Phường Tân An, Cần Thơ</p>
+            <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Can+Tho" target="_blank" rel="noopener noreferrer">XEM TRÊN GOOGLE MAPS</a>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- ===== CHÂN TRANG ===== -->
+<footer>
+    <h3>☕ Lười CoFFe</h3>
+    <p>Lười một chút, chill một đời!</p>
+    <p>© 2026 by Khoa</p>
+</footer>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+const danhSachMon = [
+    /* Nhóm Cà phê (4 món) */
+    { ten: "Cà phê đen", gia: 25000, moTa: "Cà phê đen nguyên chất đậm đà, thơm nồng", anh: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=500", nhom: "caphe" },
+    { ten: "Cà phê sữa", gia: 30000, moTa: "Cà phê sữa pha phin truyền thống béo ngọt", anh: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=500", nhom: "caphe" },
+    { ten: "Cà phê muối", gia: 39000, moTa: "Cà phê kết hợp lớp kem muối béo mịn độc đáo", anh: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=500", nhom: "caphe" },
+    { ten: "Bạc xỉu", gia: 35000, moTa: "Nhiều sữa tươi kết hợp chút cà phê thơm béo", anh: "https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?w=500", nhom: "caphe" },
+
+    /* Nhóm Trà & Trà sữa Hot Trend (10 món) */
+    { ten: "Trà sữa ô long nướng", gia: 42000, moTa: "Trà ô long thơm đậm vị nướng kết hợp sữa béo ngậy", anh: "https://images.unsplash.com/photo-1541658016709-82535e94bc69?w=500", nhom: "tra" },
+    { ten: "Trà ô long mãng cầu", gia: 45000, moTa: "Trà ô long thanh mát kết hợp mãng cầu xiêm chua ngọt", anh: "https://images.unsplash.com/photo-1556881286-fc6915169721?w=500", nhom: "tra" },
+    { ten: "Sữa tươi trân châu đường đen", gia: 45000, moTa: "Sữa tươi thanh béo cùng trân châu dẻo quyện sốt đường đen", anh: "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=500", nhom: "tra" },
+    { ten: "Hồng trà kem trứng", gia: 42000, moTa: "Hồng trà thơm đậm phủ lớp kem trứng béo ngậy bùng nổ", anh: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=500", nhom: "tra" },
+    { ten: "Trà đào cam sả", gia: 39000, moTa: "Trà thanh mát kết hợp đào miếng, cam tươi và sả", anh: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=500", nhom: "tra" },
+    { ten: "Trà vải hoa hồng", gia: 40000, moTa: "Trà trái cây thơm ngát hương hoa hồng và quả vải mọng nước", anh: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=500", nhom: "tra" },
+    { ten: "Matcha latte", gia: 45000, moTa: "Bột matcha Nhật Bản nguyên chất hòa sữa tươi", anh: "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?w=500", nhom: "tra" },
+    { ten: "Trà lựu đỏ hồng trà", gia: 42000, moTa: "Trà đỏ kết hợp hạt lựu tươi giòn sần sật thanh mát", anh: "https://images.unsplash.com/photo-1536935338788-846bb9981813?w=500", nhom: "tra" },
+    { ten: "Trà sữa thái xanh", gia: 35000, moTa: "Trà thái xanh thơm mát đặc trưng, ngọt dịu vừa vặn", anh: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=500", nhom: "tra" },
+    { ten: "Sủi cảo trái cây (Fruit Tea)", gia: 45000, moTa: "Đại tiệc trái cây tươi mix cùng trà nhài thơm lừng", anh: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=500", nhom: "tra" },
+
+    /* Nhóm Bánh ngọt & Tráng miệng (6 món) */
+    { ten: "Bánh flan", gia: 22000, moTa: "Bánh flan mềm mịn, béo thơm vị trứng với caramel sánh đậm", anh: "https://images.unsplash.com/photo-1527661591475-527312dd65f5?w=500", nhom: "trangmieng" },
+    { ten: "Bánh Tiramisu", gia: 38000, moTa: "Bánh ngọt Ý vị cà phê kết hợp lớp phô mai mascarpone béo mịn", anh: "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=500", nhom: "trangmieng" },
+    { ten: "Bánh bông lan trứng muối", gia: 35000, moTa: "Cốt bánh mềm mịn phủ sốt trứng muối đậm đà và chà bông", anh: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=500", nhom: "trangmieng" },
+    { ten: "Bánh Mousse Xoài", gia: 36000, moTa: "Lớp mousse xoài tươi chua ngọt thanh mát tan chảy trong miệng", anh: "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=500", nhom: "trangmieng" },
+    { ten: "Rau câu dừa", gia: 15000, moTa: "Rau câu nước cốt dừa thanh mát, giòn sần sật giải nhiệt", anh: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=500", nhom: "trangmieng" },
+    { ten: "Bánh Brownie sô-cô-la", gia: 32000, moTa: "Bánh sô-cô-la đậm đặc, ngọt ngào thơm nức mũi", anh: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=500", nhom: "trangmieng" }
+];
+
+function dinhDangTien(soTien) {
+    return soTien.toLocaleString("vi-VN") + "đ";
+}
+
+function hienThiThucDon() {
+    danhSachMon.forEach(function(mon) {
+        let idKhung = "menu-caphe";
+        if (mon.nhom === "tra") idKhung = "menu-tra";
+        if (mon.nhom === "trangmieng") idKhung = "menu-trangmieng";
+
+        const khung = document.getElementById(idKhung);
+        if (!khung) return;
+
+        const card = document.createElement("article");
+        card.className = "product";
+
+        const img = document.createElement("img");
+        img.src = mon.anh;
+        img.alt = mon.ten;
+        img.loading = "lazy";
+        img.onerror = function() {
+            this.src = "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500";
+        };
+
+        const ten = document.createElement("h3");
+        ten.textContent = mon.ten;
+
+        const moTa = document.createElement("p");
+        moTa.textContent = mon.moTa;
+
+        const gia = document.createElement("span");
+        gia.className = "price";
+        gia.textContent = dinhDangTien(mon.gia);
+
+        const nut = document.createElement("button");
+        nut.textContent = "🛒 Thêm vào giỏ";
+        nut.onclick = function() {
+            themMon(mon.ten, mon.gia);
+        };
+
+        card.appendChild(img);
+        card.appendChild(ten);
+        card.appendChild(moTa);
+        card.appendChild(gia);
+        card.appendChild(nut);
+        khung.appendChild(card);
+    });
+}
+
+const gioHang = [];
+
+function themMon(ten, gia) {
+    const mon = gioHang.find(item => item.ten === ten);
+    if (mon) {
+        mon.soLuong++;
+    } else {
+        gioHang.push({ ten: ten, gia: gia, soLuong: 1 });
+    }
+    hienThiGioHang();
+}
+
+function thayDoiSoLuong(viTri, thayDoi) {
+    gioHang[viTri].soLuong += thayDoi;
+    if (gioHang[viTri].soLuong <= 0) {
+        gioHang.splice(viTri, 1);
+    }
+    hienThiGioHang();
+}
+
+function xoaMon(viTri) {
+    gioHang.splice(viTri, 1);
+    hienThiGioHang();
+}
+
+function hienThiGioHang() {
+    const khung = document.getElementById("giohang");
+    const tong = document.getElementById("tongtien");
+    khung.innerHTML = "";
+    let tongTien = 0;
+
+    if (gioHang.length === 0) {
+        khung.textContent = "Chưa có sản phẩm nào.";
+    }
+
+    gioHang.forEach(function(mon, i) {
+        const thanhTien = mon.gia * mon.soLuong;
+        tongTien += thanhTien;
+
+        const dong = document.createElement("div");
+        dong.className = "cart-row";
+
+        const noiDung = document.createElement("span");
+        noiDung.textContent = mon.ten + " (x" + mon.soLuong + ") - " + dinhDangTien(thanhTien);
+
+        const dieuKhien = document.createElement("div");
+        dieuKhien.className = "cart-controls";
+
+        const nutTru = document.createElement("button");
+        nutTru.textContent = "−";
+        nutTru.onclick = () => thayDoiSoLuong(i, -1);
+
+        const soLuong = document.createElement("strong");
+        soLuong.textContent = mon.soLuong;
+
+        const nutCong = document.createElement("button");
+        nutCong.textContent = "+";
+        nutCong.onclick = () => thayDoiSoLuong(i, 1);
+
+        const nutXoa = document.createElement("button");
+        nutXoa.textContent = "Xóa";
+        nutXoa.className = "remove-btn";
+        nutXoa.onclick = () => xoaMon(i);
+
+        dieuKhien.appendChild(nutTru);
+        dieuKhien.appendChild(soLuong);
+        dieuKhien.appendChild(nutCong);
+        dieuKhien.appendChild(nutXoa);
+
+        dong.appendChild(noiDung);
+        dong.appendChild(dieuKhien);
+        khung.appendChild(dong);
+    });
+
+    tong.textContent = dinhDangTien(tongTien);
+}
+
+// Xử lý EmailJS
+document.getElementById("orderForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    if (gioHang.length === 0) {
+        alert("Vui lòng chọn món trước khi đặt hàng!");
+        return;
+    }
+
+    const ten = document.getElementById("ten").value;
+    const sdt = document.getElementById("sdt").value;
+    const diaChi = document.getElementById("diachigiaohang").value;
+    const ghiChu = document.getElementById("ghichu").value;
+
+    let chiTiet = "";
+    let tongTien = 0;
+    gioHang.forEach(function(mon) {
+        const thanhTien = mon.gia * mon.soLuong;
+        tongTien += thanhTien;
+        chiTiet += `- ${mon.ten} x ${mon.soLuong}: ${dinhDangTien(thanhTien)}\n`;
+    });
+
+    const templateParams = {
+        ten: ten,
+        sdt: sdt,
+        diachi: diaChi,
+        chitiet: chiTiet,
+        tongtien: dinhDangTien(tongTien),
+        ghichu: ghiChu || "Không có"
+    };
+
+    emailjs.send('service_bw6hxcy', '2bfde0a', templateParams, 'KqKvIm8dkq4tuwdy')
+      .then(function() {
+         alert('Đặt hàng thành công! Đơn hàng đã được gửi về Gmail.');
+         gioHang.length = 0;
+         hienThiGioHang();
+         document.getElementById("orderForm").reset();
+      }, function(error) {
+         console.log('Lỗi:', error);
+         alert('Có lỗi khi gửi email, vui lòng thử lại.');
+      });
+});
+
+hienThiThucDon();
+hienThiGioHang();
+</script>
+</body>
+</html>
