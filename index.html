@@ -944,6 +944,37 @@ document.getElementById("orderForm")
 hienThiThucDon();
 hienThiGioHang();
 </script>
+<!-- Các phần code HTML khác của trang web -->
+    
+    <!-- DÁN ĐOẠN MÃ EMAILJS VÀO ĐÂY (ngay trước thẻ đóng body) -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+       (function(){
+          emailjs.init({
+            publicKey: "KqKvIm8dkq4tuwdy",
+          });
+       })();
+    </script>
+    <script>
+      function guiDonHang(thongTinDon) {
+        const templateParams = {
+          ten: thongTinDon.ten,
+          sdt: thongTinDon.sdt,
+          diachi: thongTinDon.diachi,
+          chitiet: thongTinDon.chitiet,
+          tongtien: thongTinDon.tongtien,
+          ghichu: thongTinDon.ghichu
+        };
 
+        emailjs.send('service_bw6hxcy', 'template_n1wxs0f', templateParams)
+          .then(function(response) {
+             alert('Đặt hàng thành công!');
+          }, function(error) {
+             alert('Có lỗi xảy ra, vui lòng thử lại.');
+          });
+      }
+    </script>
+</body>
+</html>
 </body>
 </html>
