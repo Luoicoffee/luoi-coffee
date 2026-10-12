@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lười CoFFe | Cà phê & Trà sữa Cần Thơ</title>
+<title>Lười CoFFe | Cà phê & Bánh ngọt Cần Thơ</title>
 
 <!-- Thư viện EmailJS SDK -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -437,7 +437,7 @@ footer {
     <div class="container">
         <div class="banner-content">
             <h1>Lười một chút,<br>chill một đời!</h1>
-            <p>Thưởng thức hương vị cà phê đậm đà cùng Lười CoFFe.</p>
+            <p>Thưởng thức hương vị cà phê và bánh ngọt tuyệt vời cùng Lười CoFFe.</p>
             <a href="#thucdon" class="btn">KHÁM PHÁ THỰC ĐƠN</a>
         </div>
     </div>
@@ -453,7 +453,7 @@ footer {
         </div>
         <div class="member-right">
             <h2>Thành viên Lười CoFFe</h2>
-            <p>Cùng thưởng thức những ly cà phê thơm ngon mỗi ngày.</p>
+            <p>Cùng thưởng thức những ly cà phê và món tráng miệng thơm ngon mỗi ngày.</p>
             <a href="#hotro" class="btn">TÌM HIỂU NGAY</a>
         </div>
     </div>
@@ -472,12 +472,12 @@ footer {
             <article class="about-card">
                 <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600" alt="Pha chế" loading="lazy">
                 <h3>CÂU CHUYỆN NHÀ LƯỜI</h3>
-                <p>Lười CoFFe mang đến những khoảnh khắc bình yên qua từng ly cà phê.</p>
+                <p>Lười CoFFe mang đến những khoảnh khắc bình yên qua từng hương vị.</p>
             </article>
             <article class="about-card">
                 <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=600" alt="Hạt cà phê" loading="lazy">
-                <h3>CHẤT LƯỢNG CÀ PHÊ</h3>
-                <p>Chúng tôi chú trọng hương vị, chất lượng và trải nghiệm của bạn.</p>
+                <h3>CHẤT LƯỢNG HÀNG ĐẦU</h3>
+                <p>Chúng tôi chú trọng hương vị, chất lượng và trải nghiệm tốt nhất cho bạn.</p>
             </article>
         </div>
     </div>
@@ -487,7 +487,7 @@ footer {
 <section id="thucdon" class="menu-section">
     <div class="container">
         <h2>☕ Thực đơn nhà Lười</h2>
-        <p class="menu-intro">Một chút cà phê, một chút ngọt ngào, một ngày thật chill!</p>
+        <p class="menu-intro">Một chút cà phê, một chút ngọt ngào từ bánh flan, một ngày thật chill!</p>
 
         <h3 class="category-title">☕ Cà phê</h3>
         <div id="menu-caphe" class="menu-grid"></div>
@@ -561,5 +561,192 @@ footer {
 
 <!-- ===== JAVASCRIPT ===== -->
 <script>
-const danhSachMon =
-    
+const danhSachMon = [
+    { ten: "Cà phê đen", gia: 25000, moTa: "Đậm đà, thơm ngon", anh: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500", nhom: "caphe" },
+    { ten: "Cà phê sữa", gia: 30000, moTa: "Ngọt ngào, béo ngậy", anh: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500", nhom: "caphe" },
+    { ten: "Bạc xỉu", gia: 35000, moTa: "Thơm béo vị sữa", anh: "https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?w=500", nhom: "caphe" },
+    { ten: "Cà phê muối", gia: 39000, moTa: "Cà phê kết hợp kem muối béo mịn", anh: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=500", nhom: "caphe" },
+    { ten: "Cappuccino", gia: 45000, moTa: "Espresso và bọt sữa mềm mịn", anh: "https://images.unsplash.com/photo-1534778101976-62847782c213?w=500", nhom: "caphe" },
+    { ten: "Latte", gia: 45000, moTa: "Cà phê sữa thơm dịu", anh: "https://images.unsplash.com/photo-1561882468-9110e5c19132?w=500", nhom: "caphe" },
+    { ten: "Matcha latte", gia: 45000, moTa: "Matcha hòa quyện cùng sữa tươi", anh: "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=500", nhom: "tra" },
+    { ten: "Ca cao sữa", gia: 35000, moTa: "Ca cao đậm vị, sữa thơm béo", anh: "https://images.unsplash.com/photo-1517578239113-b03992dcdd25?w=500", nhom: "tra" },
+    { ten: "Trà sữa trân châu", gia: 39000, moTa: "Trà sữa béo thơm, trân châu dai", anh: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=500", nhom: "tra" },
+    { ten: "Trà đào cam sả", gia: 39000, moTa: "Thanh mát, thơm hương đào", anh: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=500", nhom: "tra" },
+    { ten: "Trà vải", gia: 39000, moTa: "Trà trái cây thơm ngọt tự nhiên", anh: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=500", nhom: "tra" },
+    { ten: "Bánh flan", gia: 22000, moTa: "Bánh flan mềm mịn, béo thơm vị trứng với lớp caramel sánh đậm", anh: "https://images.unsplash.com/photo-1527661591475-527312dd65f5?w=500", nhom: "trangmieng" },
+    { ten: "Rau câu", gia: 15000, moTa: "Rau câu thanh mát, giòn sần sật", anh: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=500", nhom: "trangmieng" }
+];
+
+function dinhDangTien(soTien) {
+    return soTien.toLocaleString("vi-VN") + "đ";
+}
+
+function hienThiThucDon() {
+    danhSachMon.forEach(function(mon) {
+        let idKhung = "menu-caphe";
+        if (mon.nhom === "tra") idKhung = "menu-tra";
+        if (mon.nhom === "trangmieng") idKhung = "menu-trangmieng";
+
+        const khung = document.getElementById(idKhung);
+        if (!khung) return;
+
+        const card = document.createElement("article");
+        card.className = "product";
+
+        const img = document.createElement("img");
+        img.src = mon.anh;
+        img.alt = mon.ten;
+        img.loading = "lazy";
+        img.onerror = function() {
+            this.src = "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500";
+        };
+
+        const ten = document.createElement("h3");
+        ten.textContent = mon.ten;
+
+        const moTa = document.createElement("p");
+        moTa.textContent = mon.moTa;
+
+        const gia = document.createElement("span");
+        gia.className = "price";
+        gia.textContent = dinhDangTien(mon.gia);
+
+        const nut = document.createElement("button");
+        nut.textContent = "🛒 Thêm vào giỏ";
+        nut.onclick = function() {
+            themMon(mon.ten, mon.gia);
+        };
+
+        card.appendChild(img);
+        card.appendChild(ten);
+        card.appendChild(moTa);
+        card.appendChild(gia);
+        card.appendChild(nut);
+        khung.appendChild(card);
+    });
+}
+
+const gioHang = [];
+
+function themMon(ten, gia) {
+    const mon = gioHang.find(item => item.ten === ten);
+    if (mon) {
+        mon.soLuong++;
+    } else {
+        gioHang.push({ ten: ten, gia: gia, soLuong: 1 });
+    }
+    hienThiGioHang();
+}
+
+function thayDoiSoLuong(viTri, thayDoi) {
+    gioHang[viTri].soLuong += thayDoi;
+    if (gioHang[viTri].soLuong <= 0) {
+        gioHang.splice(viTri, 1);
+    }
+    hienThiGioHang();
+}
+
+function xoaMon(viTri) {
+    gioHang.splice(viTri, 1);
+    hienThiGioHang();
+}
+
+function hienThiGioHang() {
+    const khung = document.getElementById("giohang");
+    const tong = document.getElementById("tongtien");
+    khung.innerHTML = "";
+    let tongTien = 0;
+
+    if (gioHang.length === 0) {
+        khung.textContent = "Chưa có sản phẩm nào.";
+    }
+
+    gioHang.forEach(function(mon, i) {
+        const thanhTien = mon.gia * mon.soLuong;
+        tongTien += thanhTien;
+
+        const dong = document.createElement("div");
+        dong.className = "cart-row";
+
+        const noiDung = document.createElement("span");
+        noiDung.textContent = mon.ten + " (x" + mon.soLuong + ") - " + dinhDangTien(thanhTien);
+
+        const dieuKhien = document.createElement("div");
+        dieuKhien.className = "cart-controls";
+
+        const nutTru = document.createElement("button");
+        nutTru.textContent = "−";
+        nutTru.onclick = () => thayDoiSoLuong(i, -1);
+
+        const soLuong = document.createElement("strong");
+        soLuong.textContent = mon.soLuong;
+
+        const nutCong = document.createElement("button");
+        nutCong.textContent = "+";
+        nutCong.onclick = () => thayDoiSoLuong(i, 1);
+
+        const nutXoa = document.createElement("button");
+        nutXoa.textContent = "Xóa";
+        nutXoa.className = "remove-btn";
+        nutXoa.onclick = () => xoaMon(i);
+
+        dieuKhien.appendChild(nutTru);
+        dieuKhien.appendChild(soLuong);
+        dieuKhien.appendChild(nutCong);
+        dieuKhien.appendChild(nutXoa);
+
+        dong.appendChild(noiDung);
+        dong.appendChild(dieuKhien);
+        khung.appendChild(dong);
+    });
+
+    tong.textContent = dinhDangTien(tongTien);
+}
+
+// Xử lý EmailJS
+document.getElementById("orderForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    if (gioHang.length === 0) {
+        alert("Vui lòng chọn món trước khi đặt hàng!");
+        return;
+    }
+
+    const ten = document.getElementById("ten").value;
+    const sdt = document.getElementById("sdt").value;
+    const diaChi = document.getElementById("diachigiaohang").value;
+    const ghiChu = document.getElementById("ghichu").value;
+
+    let chiTiet = "";
+    let tongTien = 0;
+    gioHang.forEach(function(mon) {
+        const thanhTien = mon.gia * mon.soLuong;
+        tongTien += thanhTien;
+        chiTiet += `- ${mon.ten} x ${mon.soLuong}: ${dinhDangTien(thanhTien)}\n`;
+    });
+
+    const templateParams = {
+        ten: ten,
+        sdt: sdt,
+        diachi: diaChi,
+        chitiet: chiTiet,
+        tongtien: dinhDangTien(tongTien),
+        ghichu: ghiChu || "Không có"
+    };
+
+    emailjs.send('service_bw6hxcy', '2bfde0a', templateParams, 'KqKvIm8dkq4tuwdy')
+      .then(function() {
+         alert('Đặt hàng thành công! Đơn hàng đã được gửi về Gmail.');
+         gioHang.length = 0;
+         hienThiGioHang();
+         document.getElementById("orderForm").reset();
+      }, function(error) {
+         console.log('Lỗi:', error);
+         alert('Có lỗi khi gửi email, vui lòng thử lại.');
+      });
+});
+
+hienThiThucDon();
+hienThiGioHang();
+</script>
+</body>
+</html>
